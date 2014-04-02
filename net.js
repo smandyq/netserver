@@ -23,7 +23,7 @@ var server = tls.createServer(options, function(cleartextStream)
   cleartextStream.on("data", function(d)
   {
     console.log(d.toString());
-  }
+  });
 });
 server.listen(port, function() { //'listening' listener
   console.log('server bound to port: ' + server.address().port);
