@@ -38,5 +38,5 @@ var server = net.createServer(function(c) { //'connection' listener
   c.pipe(c);
 });
 server.listen(port, function() { //'listening' listener
-  console.log('server bound');
+  console.log('server bound to ' + server.address().port);
 });
