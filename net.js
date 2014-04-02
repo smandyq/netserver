@@ -6,7 +6,7 @@ var tls = require('tls');
 var fs = require('fs');
 
 //what a terrible idea!
-server.maxConnections = Infinity;
+tls.maxConnections = Infinity;
 
 
 var options = {
