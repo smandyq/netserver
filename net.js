@@ -1,15 +1,14 @@
 var net = require('net');
 var port = process.env.PORT || 8123;
+var path = require('path');
 
-console.log("port = " + port);
-
-/*
 var tls = require('tls');
 var fs = require('fs');
 
+
 var options = {
-key: fs.readFileSync('server-key.pem'),
-cert: fs.readFileSync('server-cert.pem')};//,
+key: fs.readFileSync(path.resolve(__dirname, 'server-key.pem')),
+cert: fs.readFileSync(path.resolve(__dirname, 'server-cert.pem'))};//,
 //requestCert: true};
 
 //var server = net.createServer(function(c) 
@@ -22,11 +21,11 @@ var server = tls.createServer(options, function(cleartextStream)
   cleartextStream.setEncoding('utf8');
   cleartextStream.pipe(cleartextStream);
 });
-server.listen(process.env.port || 80, function() { //'listening' listener
-  console.log('server bound to port: '.concat(server.address().port.toString()));
+server.listen(port, function() { //'listening' listener
+  console.log('server bound to port: ' + server.address().port);
 });
 
-*/
+/*
 
 var net = require('net');
 var server = net.createServer(function(c) { //'connection' listener
@@ -40,3 +39,4 @@ var server = net.createServer(function(c) { //'connection' listener
 server.listen(port, function() { //'listening' listener
   console.log('server bound to ' + server.address().port);
 });
+*/
