@@ -17,6 +17,6 @@ var server = tls.createServer(options, function(cleartextStream)
   cleartextStream.setEncoding('utf8');
   cleartextStream.pipe(cleartextStream);
 });
-server.listen(8123, function() { //'listening' listener
+server.listen(process.env.port || 8123, function() { //'listening' listener
   console.log('server bound to port: '.concat(server.address().port.toString()));
 });
