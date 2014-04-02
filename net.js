@@ -5,6 +5,9 @@ var path = require('path');
 var tls = require('tls');
 var fs = require('fs');
 
+//what a terrible idea!
+server.maxConnections = Infinity;
+
 
 var options = {
 key: fs.readFileSync(path.resolve(__dirname, 'server-key.pem')),
