@@ -1,4 +1,7 @@
 var net = require('net');
+var port = process.env.PORT || 8123;
+
+console.log("port = " + port);
 
 /*
 var tls = require('tls');
@@ -34,6 +37,6 @@ var server = net.createServer(function(c) { //'connection' listener
   c.write('hello\r\n');
   c.pipe(c);
 });
-server.listen(8124, function() { //'listening' listener
+server.listen(port, function() { //'listening' listener
   console.log('server bound');
 });
